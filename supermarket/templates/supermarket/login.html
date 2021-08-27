@@ -1,0 +1,38 @@
+{% extends 'supermarket/main.html' %}
+{% load static %}
+{% block content %}
+     <div class="row">
+		<div class="col-lg-6">
+			<div class="box-element" id="form-wrapper">
+				<form id="form" method="POST"  enctype="multipart/form-data">
+					{% csrf_token %}
+					<div id="user-info">
+						
+					</div>
+					
+					<div id="shipping-info">
+						
+						<div class="form-field">
+						username :-<input type="text" name="username" required="">
+						</div>
+						<div class="form-field">
+						password :-<input type="password" name="password" required="">
+						</div>
+						
+					</div>
+					
+					<hr>
+				<input id="form-button" class="btn btn-success btn-block" type="submit" value="login">
+				</form>
+			</div>
+
+			<br>
+
+		
+			
+			
+		</div>
+
+		
+	</div>
+{% endblock content %}

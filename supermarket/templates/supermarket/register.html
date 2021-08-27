@@ -1,0 +1,50 @@
+{% extends 'supermarket/main.html' %}
+{% load static %}
+{% block content %}
+     <div class="row">
+		<div class="col-lg-12">
+			<div class="box-element" id="form-wrapper">
+				<form id="form" method="POST"  enctype="multipart/form-data">
+					{% csrf_token %}
+					<div id="user-info">
+						
+					</div>
+					
+					<div id="shipping-info">
+						{% for k in form %}
+						<div class="form-field">
+							
+							
+								{{k.label}} :-{{k}}<br>
+							
+						
+							
+						</div>
+						{%endfor%}
+						{% for z in customerform %}
+						<div class="form-field">
+							
+							
+								{{z.label}} :-{{z}}<br>
+							
+						
+							
+						</div>
+						{%endfor%}
+					</div>
+					{{form.errors}}
+					<hr>
+				<input id="form-button" class="btn btn-success btn-block" type="submit" value="register">
+				</form>
+			</div>
+
+			<br>
+
+			{{customerform.errors}}
+			
+			
+		</div>
+
+		
+	</div>
+{% endblock content %}
